@@ -11,6 +11,7 @@ pub mod contract_testing;
 pub mod fundamentals;
 pub mod integration_tests;
 pub mod mutation_testing;
+pub mod performance_testing;
 pub mod property_testing;
 pub mod test_doubles;
 pub mod unit_tests;
