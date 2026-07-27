@@ -1,0 +1,10 @@
+flowchart TD
+    A[Regla observable del sistema] --> B[Escenario controlado]
+    B --> C[Acción bajo prueba]
+    C --> D[Expectativa explícita]
+    D --> E{La expectativa protege comportamiento}
+    E -->|Sí| F[Señal de confianza]
+    E -->|No| G[Señal cosmética]
+    F --> H[Revisión humana decide si basta]
+    G --> H
+    H --> I[Suite como memoria ejecutable]
