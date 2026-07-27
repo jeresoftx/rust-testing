@@ -122,3 +122,7 @@ path = "examples/soluciones/mutation_testing_nivel_2.rs"
 [[example]]
 name = "mutation_testing_nivel_3"
 path = "examples/soluciones/mutation_testing_nivel_3.rs"
+
+[[example]]
+name = "performance_testing"
+path = "examples/performance_testing.rs"
