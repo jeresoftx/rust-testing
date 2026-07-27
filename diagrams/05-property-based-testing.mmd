@@ -1,0 +1,13 @@
+flowchart TD
+    A[Regla de dominio] --> B{¿Es relación repetible?}
+    B -->|Normalización| C[Idempotencia]
+    B -->|Conversión| D[Round trip]
+    B -->|Estado o colección| E[Invariante]
+    C --> F[Dominio explícito]
+    D --> F
+    E --> F
+    F --> G[Generar casos]
+    G --> H{¿Falla?}
+    H -->|Sí| I[Reducir contraejemplo]
+    H -->|No| J[Evidencia adicional]
+    I --> K[Ejemplo de regresión]
