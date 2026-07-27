@@ -26,3 +26,7 @@ path = "examples/soluciones/fundamentos_nivel_2.rs"
 [[example]]
 name = "fundamentos_nivel_3"
 path = "examples/soluciones/fundamentos_nivel_3.rs"
+
+[[example]]
+name = "unit_tests"
+path = "examples/unit_tests.rs"

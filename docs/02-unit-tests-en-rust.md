@@ -96,4 +96,119 @@ cuándo un doctest y cuándo mover la evidencia a una escala más amplia.
 
 No se agregan dependencias externas para esta especificación.
 
+## Teoría
+
+La teoría práctica del capítulo gira alrededor de una decisión: ¿la evidencia
+que necesito pertenece a una prueba unitaria, a un doctest o a una prueba de
+integración?
+
+Un unit test es buena opción cuando la regla es pequeña, el contexto cabe en el
+módulo y la falla apunta a una causa probable. Un doctest es mejor cuando el
+comportamiento es parte de la API pública y debe enseñarse como ejemplo
+ejecutable. Una prueba de integración es más honesta cuando la regla solo
+aparece al cruzar módulos.
+
+El riesgo principal es confundir cercanía con calidad. Poner una prueba junto
+al código reduce distancia, pero no garantiza señal. La prueba sigue teniendo
+que afirmar comportamiento observable.
+
+## Diagrama
+
+```mermaid
+flowchart TD
+    A[Regla pequeña de diseño] --> B{La regla es API pública}
+    B -->|Sí| C[Doctest como contrato educativo]
+    B -->|No| D{Cruza módulos}
+    D -->|Sí| E[Test de integración]
+    D -->|No| F[Unit test junto al módulo]
+    F --> G{Protege comportamiento}
+    C --> G
+    E --> G
+    G -->|Sí| H[Señal útil]
+    G -->|No| I[Acoplamiento o señal débil]
+```
+
+El archivo fuente del diagrama vive en
+`diagrams/02-unit-tests-en-rust.mmd`.
+
+## Complejidad
+
+La complejidad de una prueba unitaria no debe medirse por cuántas líneas tiene,
+sino por cuántas razones pueden explicar una falla. Una prueba que prepara diez
+objetos, consulta estado global y depende del orden de ejecución quizá siga
+siendo "unitaria" por ubicación, pero no por claridad.
+
+La meta es mantener baja la distancia entre regla, escenario y expectativa. Si
+esa distancia crece, el capítulo recomienda subir de escala en vez de forzar un
+unit test.
+
+## Implementación
+
+El modelo vive en `src/unit_tests.rs`. La pieza central es
+`UnitTestDecision`, que guarda:
+
+- la regla observable;
+- la frontera de diseño (`Function`, `Type` o `Module`);
+- la visibilidad (`PublicApi` o `Internal`);
+- los huecos conocidos.
+
+Con esos datos, el modelo recomienda una escala y calcula una señal esperada.
+
+```rust
+use rust_testing::unit_tests::{
+    RuleVisibility, TestScale, UnitBoundary, UnitTestDecision,
+};
+
+let decision = UnitTestDecision::new(
+    "parsea una ruta pública desde texto",
+    UnitBoundary::Type,
+    RuleVisibility::PublicApi,
+)?;
+
+assert_eq!(decision.recommended_scale(), TestScale::Doctest);
+# Ok::<(), rust_testing::unit_tests::UnitTestError>(())
+```
+
+## Pruebas
+
+El módulo incluye pruebas unitarias para reglas internas del modelo y pruebas
+de integración en `tests/unit_tests.rs` para observar la API pública desde
+fuera del crate.
+
+Los doctests también forman parte de la suite. Esto refuerza una idea del
+capítulo: cuando una API pública enseña comportamiento, su documentación debe
+compilar como ejemplo real.
+
+## Benchmarks
+
+No hay benchmark propio en este capítulo. El modelo clasifica decisiones de
+testing y no contiene una operación cuyo costo sea pedagógicamente relevante.
+El repositorio sigue ejecutando `cargo bench --all-targets` como verificación
+de ruta, pero no inventa una medición artificial.
+
+## Ejemplos
+
+El ejemplo ejecutable vive en `examples/unit_tests.rs`:
+
+```bash
+cargo run --example unit_tests
+```
+
+El ejemplo imprime tres decisiones:
+
+- una regla interna que conviene probar como unit test;
+- una regla pública que conviene documentar como doctest;
+- una regla que cruza módulos y debe moverse a integración.
+
+## Ejercicios
+
+Los ejercicios graduados se agregan en el siguiente corte del capítulo. Este
+issue deja listo el material base, el diagrama y el ejemplo ejecutable.
+
+## Referencias internas
+
+- RFC-0001 §13: Rust como núcleo técnico.
+- RFC-0001 §14: anatomía de cursos y capítulos.
+- RFC-0001 §20: revisión humana diferida.
+
 No está marcado como `reviewed` ni `published`.
