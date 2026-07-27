@@ -78,4 +78,122 @@ datos podrá recomendar una estrategia de entorno y estimar la señal esperada.
 
 No se agregan dependencias externas para esta especificación.
 
+## Teoría
+
+La diferencia entre una prueba unitaria y una de integración no es una medida
+de tamaño ni de lentitud. Es la frontera que el escenario necesita cruzar para
+producir evidencia. Si una regla se explica y falla dentro de un módulo, un
+unit test da una señal más directa. Si el comportamiento existe solo cuando un
+consumidor coordina varias piezas por una API pública, una prueba de
+integración es la escala honesta.
+
+El archivo bajo `tests/` ayuda a mantener esa honestidad. El compilador trata
+la prueba como un crate externo, de modo que el escenario no puede apoyarse en
+detalles privados. Esto hace que el test revele si el contrato público permite
+completar la historia que promete.
+
+La infraestructura no convierte por sí sola una prueba en integración. Una
+base de datos real, una llamada de red o el reloj del sistema pueden ampliar el
+alcance, pero también agregan ruido. El criterio es conservar solo las
+dependencias necesarias para observar el contrato y controlar el resto.
+
+## Diagrama
+
+```mermaid
+flowchart TD
+    A[Comportamiento que importa al consumidor] --> B{¿Cruza una frontera?}
+    B -->|No| C[Unit test cerca del módulo]
+    B -->|Sí| D{¿Usa API pública del crate?}
+    D -->|Sí| E[Test de integración en tests/]
+    D -->|No| F[Definir contrato o frontera explícita]
+    E --> G{¿Necesita dependencia externa?}
+    G -->|No| H[Entorno en proceso]
+    G -->|Sí| I[Fixture o sandbox controlado]
+    H --> J[Escenario reproducible]
+    I --> J
+    J --> K[Señal sobre colaboración]
+```
+
+El archivo fuente del diagrama vive en
+`diagrams/03-tests-de-integracion.mmd`.
+
+## Complejidad
+
+La complejidad de una prueba de integración aumenta con las fronteras y las
+fuentes de variación, no solo con la cantidad de objetos que construye. Un
+escenario de dos módulos con datos deterministas puede ser más fácil de
+diagnosticar que una prueba de una función que consulta estado global.
+
+Por eso conviene registrar riesgos visibles: estado compartido, entradas no
+deterministas, infraestructura no controlada y ausencia de casos de falla. El
+modelo del capítulo no elimina esos riesgos; los vuelve parte de la decisión.
+
+## Implementación
+
+El modelo vive en `src/integration_tests.rs`. La pieza central es
+`IntegrationTestDecision`, que conserva:
+
+- el escenario observable;
+- la frontera integrada (`ModulePair`, `PublicWorkflow` o `ExternalAdapter`);
+- la superficie desde la que el consumidor observa el contrato;
+- los riesgos conocidos que pueden degradar la señal.
+
+Con esos datos recomienda un entorno mínimo: en proceso, fixture o sandbox.
+
+```rust
+use rust_testing::integration_tests::{
+    IntegrationBoundary, IntegrationEnvironment, IntegrationSurface,
+    IntegrationTestDecision,
+};
+
+let decision = IntegrationTestDecision::new(
+    "crea un pedido y reserva inventario por la API pública",
+    IntegrationBoundary::PublicWorkflow,
+    IntegrationSurface::PublicApi,
+)?;
+
+assert_eq!(decision.recommended_environment(), IntegrationEnvironment::InProcess);
+# Ok::<(), rust_testing::integration_tests::IntegrationTestError>(())
+```
+
+## Pruebas
+
+El módulo contiene pruebas unitarias para las reglas del modelo. El archivo
+`tests/integration_tests.rs` consume la API pública desde fuera del crate, que
+es la misma posición que tendría un usuario real de la librería.
+
+Los doctests también se ejecutan para verificar que el ejemplo público no se
+aleje del comportamiento del modelo.
+
+## Benchmarks
+
+No hay benchmark propio en este capítulo. El modelo clasifica decisiones de
+testing y no ejecuta una operación cuyo costo sea relevante para el aprendizaje.
+Crear una medición artificial ocultaría el objetivo del capítulo. El repositorio
+conserva `cargo bench --all-targets` como verificación de ruta.
+
+## Ejemplos
+
+El ejemplo ejecutable vive en `examples/integration_tests.rs`:
+
+```bash
+cargo run --example integration_tests
+```
+
+Presenta tres escenarios: una colaboración entre módulos, un flujo público y
+un adaptador externo. El último expone una dependencia no controlada para
+mostrar por qué ejecutar más infraestructura no siempre produce mejor señal.
+
+## Ejercicios
+
+Los ejercicios graduados y sus soluciones se agregarán al cerrar el capítulo.
+El lector deberá distinguir una frontera integrada, elegir el entorno mínimo y
+detectar el riesgo que vuelve débil un escenario.
+
+## Referencias internas
+
+- RFC-0001 §13: Rust como núcleo técnico.
+- RFC-0001 §14: anatomía de cursos y capítulos.
+- RFC-0001 §20: revisión humana diferida.
+
 No está marcado como `reviewed` ni `published`.

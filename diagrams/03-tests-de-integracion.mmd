@@ -1,0 +1,12 @@
+flowchart TD
+    A[Comportamiento que importa al consumidor] --> B{¿Cruza una frontera?}
+    B -->|No| C[Unit test cerca del módulo]
+    B -->|Sí| D{¿Usa API pública del crate?}
+    D -->|Sí| E[Test de integración en tests/]
+    D -->|No| F[Definir contrato o frontera explícita]
+    E --> G{¿Necesita dependencia externa?}
+    G -->|No| H[Entorno en proceso]
+    G -->|Sí| I[Fixture o sandbox controlado]
+    H --> J[Escenario reproducible]
+    I --> J
+    J --> K[Señal sobre colaboración]
