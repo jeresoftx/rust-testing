@@ -91,9 +91,10 @@ clara.
 
 ## Preparación para el modelo Rust
 
-El modelo mínimo del capítulo representará afirmaciones de prueba, tipos de
-evidencia y señales de confianza. No usará frameworks externos: el objetivo es
-hacer visible el razonamiento antes de conectar herramientas.
+El modelo mínimo del capítulo vive en `src/fundamentals.rs`. Representa
+afirmaciones de prueba, tipos de evidencia, huecos conocidos y señales de
+confianza. No usa frameworks externos: el objetivo es hacer visible el
+razonamiento antes de conectar herramientas.
 
 Ese modelo debe permitir expresar preguntas como:
 
@@ -101,6 +102,10 @@ Ese modelo debe permitir expresar preguntas como:
 - ¿qué tipo de evidencia lo protege?
 - ¿qué riesgo queda fuera?
 - ¿la señal es fuerte o solo cosmética?
+
+El módulo no intenta ejecutar pruebas por su cuenta. Enseña el vocabulario que
+después usarán los capítulos sobre unit tests, integración, contratos,
+propiedades y rendimiento.
 
 ## Fuera de alcance
 
