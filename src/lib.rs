@@ -8,4 +8,5 @@
 //! es aprender a diseñar sistemas observables, verificables y mantenibles.
 
 pub mod fundamentals;
+pub mod integration_tests;
 pub mod unit_tests;
