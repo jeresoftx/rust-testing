@@ -138,3 +138,7 @@ path = "examples/soluciones/performance_testing_nivel_2.rs"
 [[example]]
 name = "performance_testing_nivel_3"
 path = "examples/soluciones/performance_testing_nivel_3.rs"
+
+[[example]]
+name = "chaos_testing"
+path = "examples/chaos_testing.rs"
