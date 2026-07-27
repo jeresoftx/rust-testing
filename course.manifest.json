@@ -14,7 +14,7 @@
       "id": "fundamentals",
       "title": "Fundamentos de testing",
       "slug": "fundamentos-de-testing",
-      "status": "planned",
+      "status": "draft",
       "document": "docs/01-fundamentos-de-testing.md",
       "module": "src/fundamentals.rs",
       "milestone": "01. Fundamentos de testing"

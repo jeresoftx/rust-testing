@@ -41,7 +41,7 @@ antes de usar `reviewed` o `published`.
 
 | # | Capítulo | Módulo sugerido | Estado |
 |---|----------|-----------------|--------|
-| 01 | Fundamentos de testing | `src/fundamentals.rs` | planned |
+| 01 | Fundamentos de testing | `src/fundamentals.rs` | draft |
 | 02 | Unit tests en Rust | `src/unit_tests.rs` | planned |
 | 03 | Tests de integración | `src/integration_tests.rs` | planned |
 | 04 | Test doubles | `src/test_doubles.rs` | planned |

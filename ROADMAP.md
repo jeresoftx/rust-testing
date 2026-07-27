@@ -13,7 +13,7 @@ el estándar de Jeresoft Academy.
 
 | # | Capítulo | Milestone | Estado |
 |---|----------|-----------|--------|
-| 01 | Fundamentos de testing | 01. Fundamentos de testing | planned |
+| 01 | Fundamentos de testing | 01. Fundamentos de testing | draft |
 | 02 | Unit tests en Rust | 02. Unit tests en Rust | planned |
 | 03 | Tests de integración | 03. Tests de integración | planned |
 | 04 | Test doubles | 04. Test doubles | planned |
