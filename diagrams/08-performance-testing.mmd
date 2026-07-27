@@ -1,0 +1,9 @@
+flowchart TD
+    A[Pregunta de costo] --> B[Escenario representativo]
+    B --> C[Unidad y presupuesto]
+    C --> D[Medición repetible]
+    D --> E{¿Contra referencia?}
+    E -->|Dentro de presupuesto| F[Evidencia útil]
+    E -->|Regresión o ruido| G[Investigar]
+    G --> H[Confirmar entorno y causa]
+    H --> I[Decisión de ingeniería]
