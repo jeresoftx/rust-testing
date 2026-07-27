@@ -74,3 +74,7 @@ path = "examples/soluciones/test_doubles_nivel_2.rs"
 [[example]]
 name = "test_doubles_nivel_3"
 path = "examples/soluciones/test_doubles_nivel_3.rs"
+
+[[example]]
+name = "property_testing"
+path = "examples/property_testing.rs"

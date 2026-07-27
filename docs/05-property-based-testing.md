@@ -49,4 +49,75 @@ dominios y leer contraejemplos honestos.
 El modelo representará la clase de propiedad, el dominio de generación y los
 riesgos que debilitan la señal. No se agregan dependencias externas.
 
+## Teoría
+
+Una propiedad útil es más precisa que una expectativa genérica y más amplia que
+un ejemplo aislado. La idempotencia protege transformaciones que no deben seguir
+cambiando; un round trip protege conversiones; un invariante protege una
+relación que debe mantenerse ante muchas entradas.
+
+El generador no sustituye el criterio de dominio. Primero se decide qué valores
+son válidos, qué bordes importan y cuál sería un contraejemplo explicable. Solo
+entonces tiene sentido explorar más casos.
+
+## Diagrama
+
+```mermaid
+flowchart TD
+    A[Regla de dominio] --> B{¿Es relación repetible?}
+    B -->|Normalización| C[Idempotencia]
+    B -->|Conversión| D[Round trip]
+    B -->|Estado o colección| E[Invariante]
+    C --> F[Dominio explícito]
+    D --> F
+    E --> F
+    F --> G[Generar casos]
+    G --> H{¿Falla?}
+    H -->|Sí| I[Reducir contraejemplo]
+    H -->|No| J[Evidencia adicional]
+    I --> K[Ejemplo de regresión]
+```
+
+El archivo fuente vive en `diagrams/05-property-based-testing.mmd`.
+
+## Complejidad
+
+El costo principal está en comprender una falla. Un dominio grande y una
+propiedad vaga producen contraejemplos difíciles de interpretar. Por eso el
+capítulo favorece dominios acotados, bordes declarados y resultados
+reproducibles antes de aumentar el volumen de casos.
+
+## Implementación
+
+`PropertyDecision` en `src/property_testing.rs` guarda el enunciado, la clase
+de propiedad, el dominio y los huecos conocidos. No reemplaza un framework de
+generación: hace visible la decisión que debe existir antes de usarlo.
+
+## Pruebas
+
+El módulo tiene pruebas unitarias, un consumidor externo en
+`tests/property_testing.rs` y un doctest para el uso público.
+
+## Benchmarks
+
+No hay benchmark propio. Medir este modelo no mide el costo de generar datos ni
+de reducir contraejemplos en un sistema real. `cargo bench --all-targets` se
+mantiene como verificación de ruta.
+
+## Ejemplos
+
+```bash
+cargo run --example property_testing
+```
+
+## Ejercicios
+
+Los ejercicios y soluciones graduadas se agregan al cerrar el capítulo.
+
+## Referencias internas
+
+- RFC-0001 §13: Rust como núcleo técnico.
+- RFC-0001 §14: anatomía de cursos y capítulos.
+- RFC-0001 §20: revisión humana diferida.
+
 No está marcado como `reviewed` ni `published`.
