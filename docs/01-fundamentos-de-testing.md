@@ -223,7 +223,8 @@ ejemplo real.
 No hay benchmark propio en este capítulo. El modelo es conceptual, sin costo
 observable relevante ni algoritmo que comparar. La decisión de benchmark se
 retomará en el ejercicio del capítulo y en los capítulos de performance
-testing.
+testing. La justificación detallada vive en
+`docs/costos/01-fundamentos-de-testing.md`.
 
 ## Ejemplos
 
@@ -245,8 +246,13 @@ evidencia, huecos y señal.
 
 ## Ejercicios
 
-Los ejercicios graduados quedan fuera del alcance de este issue y se agregan
-en el siguiente corte del capítulo.
+Los ejercicios graduados viven en
+`docs/ejercicios/01-fundamentos-de-testing.md`. Cubren tres niveles con
+soluciones ejecutables:
+
+- nivel 1: clasificar evidencia básica;
+- nivel 2: detectar huecos de confianza;
+- nivel 3: comparar señales para tomar una decisión de suite.
 
 ## Referencias internas
 
