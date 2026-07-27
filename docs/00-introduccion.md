@@ -23,5 +23,5 @@ en fundamentos que siguen siendo útiles aunque las herramientas cambien.
 
 ## Estado editorial
 
-Este documento está en `planned`. No está marcado como `reviewed` ni
+Este documento está en `draft`. No está marcado como `reviewed` ni
 `published`.

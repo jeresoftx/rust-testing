@@ -5,7 +5,7 @@
     "repository": "https://github.com/jeresoftx/rust-testing",
     "language": "rust",
     "track": "complementario técnico",
-    "status": "planned",
+    "status": "draft",
     "rfc": "RFC-0001 §10"
   },
   "chapters": [
@@ -24,7 +24,7 @@
       "id": "unit_tests",
       "title": "Unit tests en Rust",
       "slug": "unit-tests-en-rust",
-      "status": "planned",
+      "status": "draft",
       "document": "docs/02-unit-tests-en-rust.md",
       "module": "src/unit_tests.rs",
       "milestone": "02. Unit tests en Rust"
@@ -34,7 +34,7 @@
       "id": "integration_tests",
       "title": "Tests de integración",
       "slug": "tests-de-integracion",
-      "status": "planned",
+      "status": "draft",
       "document": "docs/03-tests-de-integracion.md",
       "module": "src/integration_tests.rs",
       "milestone": "03. Tests de integración"
@@ -44,7 +44,7 @@
       "id": "test_doubles",
       "title": "Test doubles",
       "slug": "test-doubles",
-      "status": "planned",
+      "status": "draft",
       "document": "docs/04-test-doubles.md",
       "module": "src/test_doubles.rs",
       "milestone": "04. Test doubles"
@@ -54,7 +54,7 @@
       "id": "property_testing",
       "title": "Property-based testing",
       "slug": "property-based-testing",
-      "status": "planned",
+      "status": "draft",
       "document": "docs/05-property-based-testing.md",
       "module": "src/property_testing.rs",
       "milestone": "05. Property-based testing"
@@ -64,7 +64,7 @@
       "id": "contract_testing",
       "title": "Contract testing",
       "slug": "contract-testing",
-      "status": "planned",
+      "status": "draft",
       "document": "docs/06-contract-testing.md",
       "module": "src/contract_testing.rs",
       "milestone": "06. Contract testing"
@@ -74,7 +74,7 @@
       "id": "mutation_testing",
       "title": "Mutation testing",
       "slug": "mutation-testing",
-      "status": "planned",
+      "status": "draft",
       "document": "docs/07-mutation-testing.md",
       "module": "src/mutation_testing.rs",
       "milestone": "07. Mutation testing"
@@ -84,7 +84,7 @@
       "id": "performance_testing",
       "title": "Performance testing",
       "slug": "performance-testing",
-      "status": "planned",
+      "status": "draft",
       "document": "docs/08-performance-testing.md",
       "module": "src/performance_testing.rs",
       "milestone": "08. Performance testing"
@@ -94,7 +94,7 @@
       "id": "chaos_testing",
       "title": "Chaos testing",
       "slug": "chaos-testing",
-      "status": "planned",
+      "status": "draft",
       "document": "docs/09-chaos-testing.md",
       "module": "src/chaos_testing.rs",
       "milestone": "09. Chaos testing"
@@ -104,7 +104,7 @@
       "id": "quality_strategy",
       "title": "Estrategia de calidad para sistemas reales",
       "slug": "estrategia-de-calidad-para-sistemas-reales",
-      "status": "planned",
+      "status": "draft",
       "document": "docs/10-estrategia-de-calidad-para-sistemas-reales.md",
       "module": "src/quality_strategy.rs",
       "milestone": "10. Estrategia de calidad para sistemas reales"

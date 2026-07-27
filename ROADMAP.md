@@ -1,7 +1,7 @@
 # Roadmap
 
 **Curso:** rust-testing  
-**Estado actual:** planned  
+**Estado actual:** draft
 **Tipo:** complementario técnico  
 **Fuente:** RFC-0001 §10, §13, §14 y §15
 
@@ -14,15 +14,15 @@ el estándar de Jeresoft Academy.
 | # | Capítulo | Milestone | Estado |
 |---|----------|-----------|--------|
 | 01 | Fundamentos de testing | 01. Fundamentos de testing | draft |
-| 02 | Unit tests en Rust | 02. Unit tests en Rust | planned |
-| 03 | Tests de integración | 03. Tests de integración | planned |
-| 04 | Test doubles | 04. Test doubles | planned |
-| 05 | Property-based testing | 05. Property-based testing | planned |
-| 06 | Contract testing | 06. Contract testing | planned |
-| 07 | Mutation testing | 07. Mutation testing | planned |
-| 08 | Performance testing | 08. Performance testing | planned |
-| 09 | Chaos testing | 09. Chaos testing | planned |
-| 10 | Estrategia de calidad para sistemas reales | 10. Estrategia de calidad para sistemas reales | planned |
+| 02 | Unit tests en Rust | 02. Unit tests en Rust | draft |
+| 03 | Tests de integración | 03. Tests de integración | draft |
+| 04 | Test doubles | 04. Test doubles | draft |
+| 05 | Property-based testing | 05. Property-based testing | draft |
+| 06 | Contract testing | 06. Contract testing | draft |
+| 07 | Mutation testing | 07. Mutation testing | draft |
+| 08 | Performance testing | 08. Performance testing | draft |
+| 09 | Chaos testing | 09. Chaos testing | draft |
+| 10 | Estrategia de calidad para sistemas reales | 10. Estrategia de calidad para sistemas reales | draft |
 
 ## Cierre editorial
 
