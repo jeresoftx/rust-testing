@@ -90,3 +90,7 @@ path = "examples/soluciones/property_testing_nivel_2.rs"
 [[example]]
 name = "property_testing_nivel_3"
 path = "examples/soluciones/property_testing_nivel_3.rs"
+
+[[example]]
+name = "contract_testing"
+path = "examples/contract_testing.rs"
