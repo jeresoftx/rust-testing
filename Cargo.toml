@@ -154,3 +154,7 @@ path = "examples/soluciones/chaos_testing_nivel_2.rs"
 [[example]]
 name = "chaos_testing_nivel_3"
 path = "examples/soluciones/chaos_testing_nivel_3.rs"
+
+[[example]]
+name = "quality_strategy"
+path = "examples/quality_strategy.rs"
