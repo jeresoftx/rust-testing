@@ -9,4 +9,5 @@
 
 pub mod fundamentals;
 pub mod integration_tests;
+pub mod test_doubles;
 pub mod unit_tests;
