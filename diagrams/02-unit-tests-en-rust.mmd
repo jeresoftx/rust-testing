@@ -1,0 +1,11 @@
+flowchart TD
+    A[Regla pequeña de diseño] --> B{La regla es API pública}
+    B -->|Sí| C[Doctest como contrato educativo]
+    B -->|No| D{Cruza módulos}
+    D -->|Sí| E[Test de integración]
+    D -->|No| F[Unit test junto al módulo]
+    F --> G{Protege comportamiento}
+    C --> G
+    E --> G
+    G -->|Sí| H[Señal útil]
+    G -->|No| I[Acoplamiento o señal débil]
