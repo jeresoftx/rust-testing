@@ -184,7 +184,8 @@ compilar como ejemplo real.
 No hay benchmark propio en este capítulo. El modelo clasifica decisiones de
 testing y no contiene una operación cuyo costo sea pedagógicamente relevante.
 El repositorio sigue ejecutando `cargo bench --all-targets` como verificación
-de ruta, pero no inventa una medición artificial.
+de ruta, pero no inventa una medición artificial. La decisión detallada vive en
+`docs/costos/02-unit-tests-en-rust.md`.
 
 ## Ejemplos
 
@@ -202,8 +203,13 @@ El ejemplo imprime tres decisiones:
 
 ## Ejercicios
 
-Los ejercicios graduados se agregan en el siguiente corte del capítulo. Este
-issue deja listo el material base, el diagrama y el ejemplo ejecutable.
+Los ejercicios graduados viven en
+`docs/ejercicios/02-unit-tests-en-rust.md`. Cubren tres niveles con soluciones
+ejecutables:
+
+- nivel 1: elegir escala de prueba;
+- nivel 2: reconocer huecos de unit testing;
+- nivel 3: diseñar una suite pequeña sin exponer APIs internas.
 
 ## Referencias internas
 
