@@ -1,0 +1,113 @@
+{
+  "course": {
+    "id": "rust-testing",
+    "title": "Testing en Rust",
+    "repository": "https://github.com/jeresoftx/rust-testing",
+    "language": "rust",
+    "track": "complementario técnico",
+    "status": "planned",
+    "rfc": "RFC-0001 §10"
+  },
+  "chapters": [
+    {
+      "number": 1,
+      "id": "fundamentals",
+      "title": "Fundamentos de testing",
+      "slug": "fundamentos-de-testing",
+      "status": "planned",
+      "document": "docs/01-fundamentos-de-testing.md",
+      "module": "src/fundamentals.rs",
+      "milestone": "01. Fundamentos de testing"
+    },
+    {
+      "number": 2,
+      "id": "unit_tests",
+      "title": "Unit tests en Rust",
+      "slug": "unit-tests-en-rust",
+      "status": "planned",
+      "document": "docs/02-unit-tests-en-rust.md",
+      "module": "src/unit_tests.rs",
+      "milestone": "02. Unit tests en Rust"
+    },
+    {
+      "number": 3,
+      "id": "integration_tests",
+      "title": "Tests de integración",
+      "slug": "tests-de-integracion",
+      "status": "planned",
+      "document": "docs/03-tests-de-integracion.md",
+      "module": "src/integration_tests.rs",
+      "milestone": "03. Tests de integración"
+    },
+    {
+      "number": 4,
+      "id": "test_doubles",
+      "title": "Test doubles",
+      "slug": "test-doubles",
+      "status": "planned",
+      "document": "docs/04-test-doubles.md",
+      "module": "src/test_doubles.rs",
+      "milestone": "04. Test doubles"
+    },
+    {
+      "number": 5,
+      "id": "property_testing",
+      "title": "Property-based testing",
+      "slug": "property-based-testing",
+      "status": "planned",
+      "document": "docs/05-property-based-testing.md",
+      "module": "src/property_testing.rs",
+      "milestone": "05. Property-based testing"
+    },
+    {
+      "number": 6,
+      "id": "contract_testing",
+      "title": "Contract testing",
+      "slug": "contract-testing",
+      "status": "planned",
+      "document": "docs/06-contract-testing.md",
+      "module": "src/contract_testing.rs",
+      "milestone": "06. Contract testing"
+    },
+    {
+      "number": 7,
+      "id": "mutation_testing",
+      "title": "Mutation testing",
+      "slug": "mutation-testing",
+      "status": "planned",
+      "document": "docs/07-mutation-testing.md",
+      "module": "src/mutation_testing.rs",
+      "milestone": "07. Mutation testing"
+    },
+    {
+      "number": 8,
+      "id": "performance_testing",
+      "title": "Performance testing",
+      "slug": "performance-testing",
+      "status": "planned",
+      "document": "docs/08-performance-testing.md",
+      "module": "src/performance_testing.rs",
+      "milestone": "08. Performance testing"
+    },
+    {
+      "number": 9,
+      "id": "chaos_testing",
+      "title": "Chaos testing",
+      "slug": "chaos-testing",
+      "status": "planned",
+      "document": "docs/09-chaos-testing.md",
+      "module": "src/chaos_testing.rs",
+      "milestone": "09. Chaos testing"
+    },
+    {
+      "number": 10,
+      "id": "quality_strategy",
+      "title": "Estrategia de calidad para sistemas reales",
+      "slug": "estrategia-de-calidad-para-sistemas-reales",
+      "status": "planned",
+      "document": "docs/10-estrategia-de-calidad-para-sistemas-reales.md",
+      "module": "src/quality_strategy.rs",
+      "milestone": "10. Estrategia de calidad para sistemas reales"
+    }
+  ]
+}

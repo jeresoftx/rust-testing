@@ -1,0 +1,12 @@
+[package]
+name = "rust_testing"
+version = "0.1.0"
+edition = "2024"
+description = "Testing en Rust para ingenieros de software."
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/jeresoftx/rust-testing"
+readme = "README.md"
+keywords = ["testing", "rust", "quality", "tdd"]
+categories = ["development-tools::testing"]
+
+[dependencies]
