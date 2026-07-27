@@ -7,6 +7,7 @@
 //! El objetivo del curso no es coleccionar frameworks de testing. El objetivo
 //! es aprender a diseñar sistemas observables, verificables y mantenibles.
 
+pub mod contract_testing;
 pub mod fundamentals;
 pub mod integration_tests;
 pub mod property_testing;
