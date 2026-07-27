@@ -10,3 +10,7 @@ keywords = ["testing", "rust", "quality", "tdd"]
 categories = ["development-tools::testing"]
 
 [dependencies]
+
+[[example]]
+name = "fundamentals"
+path = "examples/fundamentals.rs"
