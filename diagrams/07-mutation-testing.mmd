@@ -1,0 +1,9 @@
+flowchart TD
+    A[Regla observable] --> B[Crear mutante pequeño]
+    B --> C[Ejecutar suite]
+    C --> D{¿La suite falla?}
+    D -->|Sí| E[Mutante muerto]
+    D -->|No| F{¿Es equivalente?}
+    F -->|Sí| G[Documentar equivalencia]
+    F -->|No| H[Investigar hueco]
+    H --> I[Agregar aserción de comportamiento]

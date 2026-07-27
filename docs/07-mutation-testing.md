@@ -45,4 +45,69 @@ representa una diferencia observable.
 El modelo describirá el tipo de mutación, su resultado y los riesgos de
 interpretar la supervivencia sin contexto.
 
+## Teoría
+
+Un mutante muerto da evidencia de que la suite distingue un cambio relevante.
+Uno que sobrevive inicia una investigación: quizá falta una aserción de
+comportamiento, quizá solo se ejecutó la línea o quizá el mutante es equivalente
+y no cambia lo que el consumidor puede observar.
+
+La práctica sana no es escribir un test por cada superviviente. Es clasificar
+el resultado, decidir si la regla importa y, solo entonces, agregar una prueba
+que explique el comportamiento faltante.
+
+## Diagrama
+
+```mermaid
+flowchart TD
+    A[Regla observable] --> B[Crear mutante pequeño]
+    B --> C[Ejecutar suite]
+    C --> D{¿La suite falla?}
+    D -->|Sí| E[Mutante muerto]
+    D -->|No| F{¿Es equivalente?}
+    F -->|Sí| G[Documentar equivalencia]
+    F -->|No| H[Investigar hueco]
+    H --> I[Agregar aserción de comportamiento]
+```
+
+El archivo fuente vive en `diagrams/07-mutation-testing.mmd`.
+
+## Complejidad
+
+El costo está en diagnosticar supervivientes. Mutar demasiadas reglas sin
+contexto produce una lista larga y poco accionable. Conviene empezar por reglas
+de negocio, condiciones y bordes cuyo cambio tendría una consecuencia clara.
+
+## Implementación
+
+`MutationDecision` en `src/mutation_testing.rs` representa la regla mutada, el
+tipo de mutación, el resultado y huecos como cobertura sin aserción o una
+equivalencia no investigada.
+
+## Pruebas
+
+El módulo incluye pruebas unitarias, un consumidor externo y un doctest para
+verificar su API pública.
+
+## Benchmarks
+
+No hay benchmark propio. El modelo no mide el costo de una herramienta real de
+mutación; `cargo bench --all-targets` mantiene la verificación de ruta.
+
+## Ejemplos
+
+```bash
+cargo run --example mutation_testing
+```
+
+## Ejercicios
+
+Los ejercicios y soluciones graduadas se agregan al cerrar el capítulo.
+
+## Referencias internas
+
+- RFC-0001 §13: Rust como núcleo técnico.
+- RFC-0001 §14: anatomía de cursos y capítulos.
+- RFC-0001 §20: revisión humana diferida.
+
 No está marcado como `reviewed` ni `published`.
