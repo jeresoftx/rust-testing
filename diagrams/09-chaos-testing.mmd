@@ -1,0 +1,8 @@
+flowchart TD
+    A[Hipótesis operativa] --> B[Acotar radio de impacto]
+    B --> C[Definir guarda y detención]
+    C --> D[Inyectar falla controlada]
+    D --> E{Resultado esperado?}
+    E -->|Sí| F[Registrar recuperación]
+    E -->|No| G[Detener e investigar]
+    G --> H[Mejorar sistema o hipótesis]
