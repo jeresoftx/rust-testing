@@ -1,0 +1,14 @@
+flowchart TD
+    A[Colaboración difícil de controlar] --> B{¿Solo importa una respuesta?}
+    B -->|Sí| C[Stub]
+    B -->|No| D{¿Importan reglas simples compartidas?}
+    D -->|Sí| E[Fake]
+    D -->|No| F{¿La interacción es contrato observable?}
+    F -->|Sí| G[Mock]
+    F -->|No| H[Revisar frontera de la prueba]
+    C --> I[Contrato explícito]
+    E --> I
+    G --> I
+    I --> J{¿Simula detalles internos?}
+    J -->|Sí| K[Señal débil]
+    J -->|No| L[Evidencia enfocada]

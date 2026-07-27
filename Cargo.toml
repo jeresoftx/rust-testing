@@ -58,3 +58,7 @@ path = "examples/soluciones/integration_tests_nivel_2.rs"
 [[example]]
 name = "integration_tests_nivel_3"
 path = "examples/soluciones/integration_tests_nivel_3.rs"
+
+[[example]]
+name = "test_doubles"
+path = "examples/test_doubles.rs"
