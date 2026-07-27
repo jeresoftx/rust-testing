@@ -32,30 +32,30 @@ vez alimenta todos los cursos que necesitan pruebas más expresivas:
 
 ## Estado editorial
 
-El curso está en estado `planned`: el repositorio, milestones e issues ya
-existen, pero los capítulos aún no están implementados. Esto no significa que
-el curso esté publicado. La revisión humana de Joel sigue siendo obligatoria
-antes de usar `reviewed` o `published`.
+Los diez capítulos técnicos están en estado `draft`, con modelos Rust,
+ejemplos, ejercicios y verificaciones ejecutables. Esto no significa que el
+curso esté publicado: la revisión humana de Joel sigue siendo obligatoria antes
+de usar `reviewed` o `published`.
 
 ## Capítulos planeados
 
 | # | Capítulo | Módulo sugerido | Estado |
 |---|----------|-----------------|--------|
 | 01 | Fundamentos de testing | `src/fundamentals.rs` | draft |
-| 02 | Unit tests en Rust | `src/unit_tests.rs` | planned |
-| 03 | Tests de integración | `src/integration_tests.rs` | planned |
-| 04 | Test doubles | `src/test_doubles.rs` | planned |
-| 05 | Property-based testing | `src/property_testing.rs` | planned |
-| 06 | Contract testing | `src/contract_testing.rs` | planned |
-| 07 | Mutation testing | `src/mutation_testing.rs` | planned |
-| 08 | Performance testing | `src/performance_testing.rs` | planned |
-| 09 | Chaos testing | `src/chaos_testing.rs` | planned |
-| 10 | Estrategia de calidad para sistemas reales | `src/quality_strategy.rs` | planned |
+| 02 | Unit tests en Rust | `src/unit_tests.rs` | draft |
+| 03 | Tests de integración | `src/integration_tests.rs` | draft |
+| 04 | Test doubles | `src/test_doubles.rs` | draft |
+| 05 | Property-based testing | `src/property_testing.rs` | draft |
+| 06 | Contract testing | `src/contract_testing.rs` | draft |
+| 07 | Mutation testing | `src/mutation_testing.rs` | draft |
+| 08 | Performance testing | `src/performance_testing.rs` | draft |
+| 09 | Chaos testing | `src/chaos_testing.rs` | draft |
+| 10 | Estrategia de calidad para sistemas reales | `src/quality_strategy.rs` | draft |
 
 Estados posibles: `planned`, `draft`, `implemented`, `tested`,
-`benchmarked`, `reviewed`, `published`. En este repositorio, `planned`
-significa que el plan existe como milestones e issues, pero el contenido aún
-no está listo para revisión humana.
+`benchmarked`, `reviewed`, `published`. En este repositorio, `draft` significa
+que el material implementado espera revisión humana y no está listo para
+publicación.
 
 ## Estructura
 
