@@ -1,0 +1,9 @@
+flowchart LR
+    C[Consumidor] --> R[Expectativa de operación]
+    R --> K[Contrato explícito]
+    K --> P[Proveedor]
+    P --> V{¿Cambio compatible?}
+    V -->|Sí| E[Verificación conserva expectativas]
+    V -->|No| M[Versionar o coordinar migración]
+    E --> D[Despliegue con menor incertidumbre]
+    M --> D
