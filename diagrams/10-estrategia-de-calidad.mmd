@@ -1,0 +1,10 @@
+flowchart TD
+    A[Riesgo de calidad] --> B[Elegir señal adecuada]
+    B --> C[Pruebas locales y de integración]
+    B --> D[CI y revisión]
+    B --> E[Observabilidad operativa]
+    C --> F[Aprendizaje de regresiones]
+    D --> F
+    E --> F
+    F --> G[Criterio humano y siguiente decisión]
+    G --> A
