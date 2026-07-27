@@ -106,3 +106,7 @@ path = "examples/soluciones/contract_testing_nivel_2.rs"
 [[example]]
 name = "contract_testing_nivel_3"
 path = "examples/soluciones/contract_testing_nivel_3.rs"
+
+[[example]]
+name = "mutation_testing"
+path = "examples/mutation_testing.rs"
